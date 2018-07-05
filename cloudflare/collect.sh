@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 echo "please remember to fill your cloudflare credentials, zoneid..."
-CLOUDFLARE_EMAIL=email@domain
-CLOUDFLARE_APIKEY=hash_api_key
-CLOUDFLARE_ZONEID=hash_zone_id
+source ~/.cloudflare
 
 # Time math is relative to what time is now.
 QUERY_TIME_RANGE=60		# 60 minutes means: the range we want to collect records. it can be from 1 to 60.
