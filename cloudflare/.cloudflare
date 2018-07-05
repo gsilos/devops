@@ -1,3 +1,4 @@
+# put this file in your $HOME
 CLOUDFLARE_EMAIL=email@domain
 CLOUDFLARE_APIKEY=hash_api_key
 CLOUDFLARE_ZONEID=hash_zone_id
