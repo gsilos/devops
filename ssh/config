@@ -1,0 +1,35 @@
+# these are the most used patterns for ssh.
+
+# my local vagrant server
+# I dont need to update my hosts file and the name is short :D
+Host lh
+  Port 2222
+  User fabiano
+  StrictHostKeyChecking no
+  IdentityFile ~/.ssh/id_rsa
+# 3 fake names can be accessed using this %h magic
+Host host1 host2 host3
+  HostName %h.domain.net
+  Port 22
+  User fabiano
+  StrictHostKeyChecking no
+  IdentityFile ~/.ssh/mykey
+#This will log to bastion server and from then ssh to the isolated server
+#Example. Bastion server is bastion.domain.net
+#isolatedserver 1 is: host1.domain.net
+Host host1 host2 host2
+  HostName %h.domain.net
+  User ubuntu
+  IdentityFile ~/.ssh/eu-central-1
+  ProxyCommand ssh bastion.domain.net -W %h:%p
+#using wildcard sometimes can help
+Host *.domain.net
+  Port 22
+  User ubuntu
+  StrictHostKeyChecking no
+  IdentityFile ~/.ssh/mykey
+#anything else is catched by that rule
+Host *
+  User fabiano
+  StrictHostKeyChecking no
+  IdentityFile ~/.ssh/id_rsa
