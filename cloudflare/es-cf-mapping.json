@@ -1,0 +1,22 @@
+{
+	"mappings" : {
+ 		"_default_" : {
+			"properties" : {
+				"CacheCacheStatus" : {"type": "string" },
+				"CacheResponseStatus" : {"type": "integer" },
+				"ClientDeviceType" : {"type": "string" },
+				"ClientIP" : {"type": "ip" },
+				"ClientRequestHost" : {"type": "string" },
+				"ClientRequestMethod" : {"type": "string" },
+				"ClientRequestProtocol" : {"type": "string" },
+				"ClientRequestURI" : {"type": "string" },
+				"ClientRequestUserAgent" : {"type": "string" },
+				"EdgeEndTimestamp" : {"type": "date" },
+				"EdgeResponseBytes" : {"type": "integer" },
+				"EdgeResponseStatus" : { "type" : "integer" },
+				"OriginIP" : { "type" : "string" },
+				"RayID" : { "type" : "string" }
+			}
+		}
+	}
+}
